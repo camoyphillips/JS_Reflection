@@ -1,0 +1,141 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.screen {
+  display: none;
+  background-color: #ccc;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.screen.visible {
+  display: flex;
+}
+
+.screen h1,
+.screen h2 {
+  background-color: grey;
+  width: 90%;
+  max-width: 556px;
+  height: 78px;
+  text-align: center;
+  line-height: 78px;
+  margin: 0 auto 20px;
+  font-size: 2em;
+  color: white;
+}
+
+.start img {
+  width: 250px;
+  height: 250px;
+  object-fit: contain;
+  display: block;
+  margin: 20px auto;
+}
+
+.task {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: #fff;
+  width: 90%;
+  max-width: 600px;
+  text-align: left;
+  border-radius: 10px;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+  font-size: 1em;
+  border-radius: 5px;
+  border: 1px solid #888;
+}
+
+button {
+  width: 90%;
+  max-width: 730px;
+  height: 60px;
+  font-size: 1.2em;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  margin: 10px 0;
+  transition: background-color 0.3s ease;
+}
+
+button.add-task {
+  background-color: #4CAF50;
+  color: white;
+}
+
+button.add-task:hover {
+  background-color: #45a049;
+}
+
+button.stop-task {
+  background-color: #f44336;
+  color: white;
+}
+
+button.stop-task:hover {
+  background-color: #d32f2f;
+}
+
+button.return-task {
+  background-color: #4CAF50;
+  color: white;
+}
+
+button.return-task:hover {
+  background-color: #388e3c;
+}
+
+button.default-yellow {
+  background-color: yellow;
+}
+
+button.default-yellow:hover {
+  background-color: gold;
+}
+
+#completion-message {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #333;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .screen h1,
+  .screen h2 {
+    width: 100%;
+    font-size: 1.5em;
+  }
+
+  .task {
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
+    font-size: 1em;
+    height: 50px;
+  }
+
+  .start img {
+    width: 200px;
+    height: 200px;
+  }
+}

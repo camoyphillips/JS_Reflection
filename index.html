@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS_Reflection</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="start-screen" class="screen visible">
+    <h1>JS_Reflection</h1>
+    <p>Track and reflect on your tasks for HTTP-5122.</p>
+    <div class="start">
+      <img src="images/JS_logo.png" alt="JS_Reflection Logo">
+    </div>
+    <button class="default-yellow" onclick="showScreen('task-list-screen')">Start</button>
+  </div>
+
+  <div id="task-list-screen" class="screen">
+    <h2>Your Tasks</h2>
+    <div>
+      <input type="text" id="task-name" placeholder="Task Name">
+      <input type="number" id="estimated-time" placeholder="Estimated Time (min)">
+      <button class="add-task" onclick="addTask()">Add Task</button>
+    </div>
+    <div id="task-list"></div>
+    <div id="completion-message" style="display:none;">🎉 Congratulations! All tasks are complete!</div>
+    <button class="return-task" onclick="showScreen('start-screen')">Back</button>
+  </div>
+
+  <div id="task-active-screen" class="screen">
+    <h2>Task in Progress</h2>
+    <p id="active-task-name"></p>
+    <p>Time Elapsed: <span id="elapsed-time">0:00</span></p>
+    <button class="stop-task" onclick="completeTask()">Stop and Complete</button>
+  </div>
+
+  <div id="task-complete-screen" class="screen">
+    <h2>Task Completed</h2>
+    <p><strong>Task:</strong> <span id="completed-task-name"></span></p>
+    <p><strong>Estimated Time:</strong> <span id="completed-estimate"></span> min</p>
+    <p><strong>Actual Time:</strong> <span id="completed-actual"></span> min</p>
+    <button class="return-task" onclick="showScreen('task-list-screen')">Back to Task List</button>
+  </div>
+
+  <div id="completion-screen" class="screen">
+    <h2>🎉 Congratulations!</h2>
+    <p>You have completed all your HTTP-5122 assignments!</p>
+    <div class="Completed">
+      <img src="images/JS_logo.png" alt="JS_Reflection Logo">
+    </div>
+    <button class="return-task" onclick="showScreen('task-list-screen')">Return to Task List</button>
+  </div>
+
+  <div id="add-comment-screen" class="screen">
+    <h2>Add Comment</h2>
+    <textarea id="comment-text" rows="4" placeholder="Why was this task incomplete?"></textarea>
+    <br>
+    <button class="add-task" onclick="submitComment()">Submit</button>
+    <button class="return-task" onclick="cancelComment()">Cancel</button>
+  </div>
+
+  <script src="reflection/script.js"></script>
+</body>
+</html>
